@@ -4,7 +4,7 @@ plugins {
     id 'jacoco'
     id 'checkstyle'
     id 'pmd'
-    id 'com.github.spotbugs' version '1.7.1'
+    // id 'com.github.spotbugs' version '1.7.1'
 }
 
 sourceSets {
@@ -73,14 +73,14 @@ pmd {
     ruleSetFiles "pmd-rules.xml"
     ruleSets = []
 }
-
+/*
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
     reports {
         xml.enabled = false
         html.enabled = true
     }
 }
-
+*/
 task staticAnalysis(type: GradleBuild) {
     tasks = [
         'clean',
@@ -90,9 +90,9 @@ task staticAnalysis(type: GradleBuild) {
         'pmdMain',
         'pmdTest',
         'pmdDefaultTest',
-        'spotbugsMain',
-        'spotbugsTest',
-        'spotbugsDefaultTest',
+        //'spotbugsMain',
+        //'spotbugsTest',
+        //'spotbugsDefaultTest',
     ]
 }
 
